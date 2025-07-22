@@ -30,7 +30,7 @@ Online-MCQ-System/
 │ └── angular.json # Angular config
 │
 └── README.md # Project documentation
-
+---
 ## 🚀 Project Setup Instructions
 
 🧱 1. Set Up Backend (Node.js + Express + MongoDB)
