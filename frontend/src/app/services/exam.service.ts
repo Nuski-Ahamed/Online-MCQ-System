@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +21,8 @@ export class ExamService {
     return this.http.get(`${this.apiUrl2}/questions/${exam_id}`);
   }
 
-  submitAnswers(exam_id: string, user_id: string, score: number) {
-  return this.http.post('http://localhost:5000/api/submit-answers', {
+  submitResults(exam_id: string, user_id: string, score: number) {
+  return this.http.post('http://localhost:5000/api/results', {
     exam_id,
     user_id,
     score

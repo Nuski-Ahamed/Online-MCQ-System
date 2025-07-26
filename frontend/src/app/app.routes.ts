@@ -4,7 +4,7 @@ import { Routes,RouterModule } from '@angular/router';
 import { Login } from './components/login/login';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { ExamPaperPage } from './pages/exam-paper-page/exam-paper-page';
-import { ResultPage } from './pages/result-page/result-page';
+
 
 
 
@@ -12,7 +12,6 @@ export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full'},
       { path: 'login', component: Login },
       { path: 'dashboard', component: Dashboard },
-      { path: 'results', component: ResultPage },
       
       { path: 'exams', component: ExamPaperPage },
       {path:'exampaper/:exam_id',component:ExamPaper},

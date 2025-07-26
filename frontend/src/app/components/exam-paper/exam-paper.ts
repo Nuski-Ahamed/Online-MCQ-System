@@ -28,25 +28,24 @@ questions: any[] = [];
     this.examService.getQuestions(this.exam_id).subscribe(
       (data) => {
         this.questions = data;
-        console.log('✅ Loaded questions for exam:', this.exam_id, data);
+        console.log('Loaded questions for exam:', this.exam_id, data);
       },
       (err) => {
-        console.error('❌ Failed to load questions:', err);
+        console.error('Failed to load questions:', err);
       }
     );
   }
 
   selectedAnswers: { [questionId: string]: string } = {};
 
- 
+
 
   submitAnswers() {
-    // console.log('Submitted answers:', this.selectedAnswers);
     
     const results = this.questions.map((q:any) => {
     const userAnswer = this.selectedAnswers[q._id];
     const isCorrect = userAnswer === q.correct_option;
-
+    
     console.log(`Question: ${q.question}`);
 
     return {
@@ -59,20 +58,20 @@ questions: any[] = [];
   });
   console.log("📝 Results:", results);
   const score = results.filter(r => r.isCorrect).length;
-  // alert(`✅ You scored ${score} out of ${this.questions.length}`);
 
-    // Send to backend: POST /api/submit-answers
-
-    const user_id = 'user1'; // Get this from auth service or localStorage
-  this.examService.submitAnswers(this.exam_id, user_id, score).subscribe(
+  const user_id = 'user1'; // Get this from auth service or localStorage
+  this.examService.submitResults(this.exam_id, user_id, score).subscribe(
     (res) => {
-      console.log('✅ Submitted to backend:', res);
-      alert(`✅ Score: ${score}/${this.questions.length}`);
+      console.log('Submitted to backend:', res);
+      alert(`Score: ${score}/${this.questions.length}`);
     },
     (err) => {
-      console.error('❌ Submission failed:', err);
+      console.error('Submission failed:', err);
     }
   );
+
+  
+ 
 
   this.router.navigate(['/exams']);
   }
