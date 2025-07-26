@@ -1,0 +1,21 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-96">
+    <h2 class="text-xl font-semibold mb-6 text-center">Login</h2>
+
+    <div class="mb-4">
+      <label class="block text-sm mb-1">Username</label>
+      <input [(ngModel)]="username" type="text" class="w-full border p-2 rounded" />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm mb-1">Password</label>
+      <input [(ngModel)]="password" type="password" class="w-full border p-2 rounded" />
+    </div>
+
+    <button (click)="login()" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+      Login
+    </button>
+
+    <p *ngIf="errorMessage" class="text-red-600 text-sm mt-2 text-center">{{ errorMessage }}</p>
+  </div>
+</div>

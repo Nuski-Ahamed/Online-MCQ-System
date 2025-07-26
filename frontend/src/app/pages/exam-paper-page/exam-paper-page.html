@@ -1,0 +1,7 @@
+<div class="flex justify-center gap-5 mt-50">
+   <app-exam-card
+   *ngFor="let exam of exams" [title]="exam.title"
+    [description]="exam.description" [exam_id]="exam._id"></app-exam-card>
+
+</div>
+

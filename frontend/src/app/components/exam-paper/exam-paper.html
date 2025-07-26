@@ -1,0 +1,30 @@
+<div class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md mt-5">
+  <h2 class="text-2xl font-bold mb-6 text-center">Exam: {{ exam_id }}</h2>
+
+  <form (ngSubmit)="submitAnswers()" class="space-y-6">
+    <div *ngFor="let q of questions; let i = index" class="space-y-2">
+      <p class="font-semibold">{{ i + 1 }}. {{ q.question_text }}</p>
+
+      <div *ngFor="let option of q.options">
+        <label class="flex items-center space-x-2">
+          <input
+            type="radio"
+            [name]="q._id"
+            [value]="option"
+            [(ngModel)]="selectedAnswers[q._id]"
+            required
+            class="text-blue-500"
+          />
+          <span>{{ option }}</span>
+        </label>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full mt-6 bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700"
+    >
+      Submit Answers
+    </button>
+  </form>
+</div>
