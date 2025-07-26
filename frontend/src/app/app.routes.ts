@@ -7,11 +7,12 @@ import { ExamPaperPage } from './pages/exam-paper-page/exam-paper-page';
 
 
 
-
 export const routes: Routes = [
       { path: '', redirectTo: 'login', pathMatch: 'full'},
       { path: 'login', component: Login },
       { path: 'dashboard', component: Dashboard },
+
+
       
       { path: 'exams', component: ExamPaperPage },
       {path:'exampaper/:exam_id',component:ExamPaper},
@@ -22,4 +23,5 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

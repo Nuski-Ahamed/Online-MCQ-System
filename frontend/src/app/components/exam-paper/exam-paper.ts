@@ -39,13 +39,12 @@ questions: any[] = [];
   selectedAnswers: { [questionId: string]: string } = {};
 
 
-
   submitAnswers() {
-    
+
     const results = this.questions.map((q:any) => {
     const userAnswer = this.selectedAnswers[q._id];
     const isCorrect = userAnswer === q.correct_option;
-    
+
     console.log(`Question: ${q.question}`);
 
     return {
@@ -69,9 +68,6 @@ questions: any[] = [];
       console.error('Submission failed:', err);
     }
   );
-
-  
- 
 
   this.router.navigate(['/exams']);
   }

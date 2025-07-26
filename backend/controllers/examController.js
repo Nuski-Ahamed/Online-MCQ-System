@@ -8,6 +8,7 @@ exports.getExams = async (req, res) => {
     res.json(exams);
   } catch (error) {
     console.error('Error fetching exams:', error);
+
     res.status(500).json({ message: 'Server error' });
   }
 };
@@ -42,7 +43,4 @@ exports.submitResults = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
-
-
-
 
