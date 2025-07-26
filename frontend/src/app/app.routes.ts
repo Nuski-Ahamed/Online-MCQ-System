@@ -1,3 +1,4 @@
+
 import { ExamPaper } from './components/exam-paper/exam-paper';
 import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from '@angular/router';
@@ -24,3 +25,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

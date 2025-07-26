@@ -28,4 +28,3 @@ app.use(examRoutes);
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
-});
